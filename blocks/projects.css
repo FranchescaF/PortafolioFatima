@@ -1,12 +1,3 @@
-/* General Styles */
-body {
-  font-family: "Arial", sans-serif;
-  color: #ffffff;
-  background-color: #0d0d0d;
-  margin: 0;
-  padding: 0;
-}
-
 h3,
 h4,
 p,
@@ -17,20 +8,28 @@ span {
 
 /* Projects Section */
 .projects {
-  padding: 40px 20px;
+  margin-top: 80px;
   text-align: center;
+  margin-bottom: 122px;
 }
 
 .projects__title {
-  font-size: 2em;
+  font-size: 76px;
   margin-bottom: 10px;
   font-family: "Bebas Neue", Arial, serif;
+  width: 600px;
+  margin-top: 80px;
+  padding: 0px;
 }
 
 .projects__subtitle {
   font-size: 1.2em;
-  margin-bottom: 40px;
   color: #c7c7c7;
+  width: 600px;
+}
+.projects__header {
+  text-align: left;
+  margin-left: 108px;
 }
 
 .projects__list {
@@ -43,8 +42,8 @@ span {
 .projects__one {
   margin-top: 80px;
   margin-bottom: 120px;
-  width: 1224px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1224px;
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -56,38 +55,44 @@ span {
   align-items: center;
   flex-direction: column;
   background-color: #1a1a1a;
-  border-radius: 8px;
   width: 600px;
   max-width: 100%;
-  height: 600px;
-  max-height: 100%;
+  height: auto;
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .one__title-image {
   font-size: 14px;
-  font-style: medium;
+  font-weight: 500;
   color: white;
   background-color: #0a0a0a;
   text-align: left;
-  border-radius: 4px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  margin-bottom: 20px;
 }
+
 .one__image {
-  width: 486px;
-  height: 347px;
+  width: 100%;
+  max-width: 486px;
+  height: auto;
+  border-radius: 12px;
 }
 
 .one__conteiner2 {
-  flex-direction: column;
+  flex: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
   text-align: left;
+  padding: 20px;
 }
 
 .one__title {
-  font-size: 1.5em;
+  font-size: 32px;
   margin-bottom: 10px;
-  color: white;
+  color: #d3e97a;
 }
 
 .one__subtitle {
@@ -98,12 +103,13 @@ span {
 }
 
 .project-info {
+  background-color: #111;
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 20px;
 }
 
-.project-info h2 {
+.project-info__title {
   font-size: 1.2em;
   margin-bottom: 10px;
   color: #d3e97a;
@@ -119,7 +125,6 @@ span {
 .info__item {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .info__title {
@@ -139,12 +144,12 @@ span {
   align-items: center;
   justify-content: center;
   color: #d3e97a;
-
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+  border: 2px solid #d3e97a;
 }
 
 .button__live-demo img,

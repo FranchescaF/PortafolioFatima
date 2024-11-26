@@ -1,0 +1,46 @@
+/* About Section */
+.about {
+  padding: 0px;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.about__content {
+  width: 704px;
+  max-width: 100%;
+}
+.about__title {
+  font-size: 101px;
+  margin-bottom: 20px;
+  font-family: "Bebas Neue", Arial, serif;
+  margin-top: 0px;
+}
+
+.about__subtitle {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #c7c7c7;
+}
+
+.about__paragraph {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #c7c7c7;
+}
+
+.about__link {
+  font-size: 1.2em;
+  color: #d3e97a;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid #d3e97a;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.about__link:hover {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
