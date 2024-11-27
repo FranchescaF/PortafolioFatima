@@ -21,3 +21,24 @@ body {
   overflow: auto; /* Permite el desplazamiento si es necesario */
   margin: 0; /* Elimina el margen por defecto */
 }
+
+/* Estilos para desktop (pantallas grandes) */
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px; /* Tamaño de fuente más grande para pantallas de escritorio */
+  }
+}
+
+/* Estilos para tablets (pantallas medianas) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    font-size: 16px; /* Ajusta el tamaño de la fuente para tabletas */
+  }
+}
+
+/* Estilos para móviles (pantallas pequeñas) */
+@media (max-width: 767px) {
+  body {
+    font-size: 14px; /* Tamaño de fuente más pequeño para móviles */
+  }
+}

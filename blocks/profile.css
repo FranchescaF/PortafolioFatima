@@ -88,29 +88,96 @@
   height: 32px; /* Aumentado el tamaño del icono */
 }
 
-/* Adaptabilidad para pantallas pequeñas */
-@media (max-width: 768px) {
+/* Estilos para pantallas grandes (Desktop) */
+@media (min-width: 1024px) {
+  .profile__content {
+    margin: 160px 80px 180px 0;
+  }
+
+  .profile__title {
+    font-size: 101px;
+  }
+
+  .profile__button {
+    width: 187px;
+    font-size: 16px;
+  }
+
+  .profile__icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Estilos para tabletas (pantallas medianas) */
+@media (min-width: 768px) and (max-width: 1023px) {
   .profile {
     flex-direction: column;
     align-items: center;
-    margin: 20px 16px;
   }
 
   .profile__content {
-    margin: 40px 0;
+    margin: 100px 40px 120px 40px;
+  }
+
+  .profile__title {
+    font-size: 80px;
     text-align: center;
   }
 
-  .profile__img {
-    margin-bottom: 20px;
+  .profile__button {
+    width: 160px;
+    font-size: 14px;
+  }
+
+  .profile__icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Estilos para dispositivos móviles (pantallas pequeñas) */
+@media (max-width: 767px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+  .profile__content {
+    margin: 50px 20px 80px 20px;
   }
 
   .profile__title {
     font-size: 60px;
+    text-align: center;
   }
 
   .profile__button {
-    width: auto;
-    padding: 10px 16px;
+    width: 140px;
+    font-size: 14px;
+    padding: 16px 20px;
+  }
+
+  .profile__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
   }
 }

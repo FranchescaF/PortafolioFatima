@@ -158,3 +158,154 @@ span {
   height: 20px;
   margin-left: 5px;
 }
+
+/* Adaptabilidad para pantallas grandes (Desktop) */
+@media (min-width: 1024px) {
+  .projects__title {
+    font-size: 76px;
+    width: 600px;
+  }
+
+  .projects__subtitle {
+    width: 600px;
+  }
+
+  .projects__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .projects__one {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .one__conteiner1 {
+    width: 600px;
+  }
+
+  .one__image {
+    width: 100%;
+    max-width: 486px;
+  }
+
+  .one__title {
+    font-size: 32px;
+  }
+
+  .one__subtitle {
+    font-size: 1em;
+  }
+}
+
+/* Adaptabilidad para tabletas (pantallas medianas) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .projects__title {
+    font-size: 60px;
+    width: 80%;
+  }
+
+  .projects__subtitle {
+    width: 80%;
+    font-size: 1.1em;
+  }
+
+  .projects__one {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .one__conteiner1 {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .one__title-image {
+    font-size: 12px;
+  }
+
+  .one__image {
+    max-width: 100%;
+  }
+
+  .one__title {
+    font-size: 28px;
+  }
+
+  .one__subtitle {
+    font-size: 0.9em;
+  }
+
+  .project-info__title {
+    font-size: 1.1em;
+  }
+
+  .info {
+    font-size: 0.9em;
+  }
+
+  .button__live-demo,
+  .button__github {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Adaptabilidad para dispositivos móviles (pantallas pequeñas) */
+@media (max-width: 767px) {
+  .projects__title {
+    font-size: 45px;
+    width: 100%;
+  }
+
+  .projects__subtitle {
+    width: 100%;
+    font-size: 1em;
+  }
+
+  .projects__header {
+    margin: 20px;
+  }
+  .projects__one {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .one__conteiner1 {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .one__title-image {
+    font-size: 12px;
+  }
+
+  .one__image {
+    width: 100%;
+  }
+
+  .one__title {
+    font-size: 24px;
+  }
+
+  .one__subtitle {
+    font-size: 0.9em;
+  }
+
+  .project-info__title {
+    font-size: 1em;
+  }
+
+  .info {
+    font-size: 0.8em;
+  }
+
+  .button__live-demo,
+  .button__github {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+}
