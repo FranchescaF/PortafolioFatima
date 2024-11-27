@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page UNIFE</title>
+    <title>Portafolio Fatima Zelaya</title>
     <meta name="author" content="Franchesca Fatima Zelaya" />
-    <meta name="description" content="Portafolio Fatima Zelaya" />
-    <meta name="keywords" content="proyecto, html, css, Portafolio" />
+    <meta name="description" content="La presente página web es mi portafolio de proyectos" />
+    <meta name="keywords" content="proyecto, html, css, Portafolio, js, java script" />
     <link rel="stylesheet" href="./pages/index.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.emailjs.com/dist/email.min.js"
+    ></script>
   </head>
   <body>
     <header class="header">
@@ -28,21 +32,27 @@
           </p>
           <div class="profile__redes">
             <button class="profile__button">
-              CONTACT ME<i class="profiles__circle fa-solid fa-circle"></i>
+              <a href="https://w.app/sCAZjG" id="openWindowButton"
+                >CONTACT ME<i class="profiles__circle fa-solid fa-circle"></i
+              ></a>
             </button>
-            <a class="profile__icon" href="https://github.com/FranchescaF"
+            <a
+              class="profile__icon"
+              href="https://github.com/FranchescaF"
+              id="openWindowButton"
               ><img class="icon" src="images/github.png"
             /></a>
             <a
               class="profile__icon"
               href="https://www.linkedin.com/in/franchesca-zelaya/"
+              id="openWindowButton"
               ><img class="icon" src="images/linkdln.png"
             /></a>
           </div>
         </div>
-        <img src="images/potrait.png" class="profile__img" />
+        <img src="images/Diseño sin título.png" class="profile__img" />
       </section>
-      <section class="projects">
+      <section class="projects" id="work">
         <div class="projects__header">
           <h3 class="projects__title">FEATURED PROJECTS</h3>
           <p class="projects__subtitle">
@@ -51,22 +61,20 @@
           </p>
         </div>
         <div class="projects__list">
-          <!-- PROYECTO 1 DATAVERSE CHAT-->
+          <!-- PROYECTO 1-->
           <div class="projects__one">
             <div class="one__conteiner1">
-              <div class="one__title-image">Conceptual Work</div>
-              <img src="images/work.png" class="one__image" />
+              <div class="one__title-image">Web Project Around</div>
+              <img src="images/projects_1.png" class="one__image" />
             </div>
             <div class="one__conteiner2">
-              <h4 class="one__title">
-                Promotional landing page for our favorite show
-              </h4>
+              <h4 class="one__title">Instagram Clone Page</h4>
               <p class="one__subtitle">
-                Teamed up with a designer to breathe life into a promotional
-                webpage for our beloved show, Adventure Time. Delivered a fully
-                responsive design with dynamic content capabilities, seamlessly
-                integrating a newsletter feature to keep fans updated with the
-                latest adventures.
+                WEB PROJECT AROUND is an interactive website similar to
+                Instagram, where users can like and dislike photos, add and
+                delete photos, and change their username. The project uses CSS,
+                HTML, JavaScript, and tools such as Figma, Git, and GitHub. It
+                also incorporates object-oriented programming concepts.
               </p>
               <div class="project-info">
                 <h2 class="project-info__title">Project Info</h2>
@@ -76,37 +84,46 @@
                     <span class="info__title">Role</span>
                   </div>
                   <div class="info__item">
-                    <span class="info__detail">2023</span>
+                    <span class="info__detail">2024</span>
                     <span class="info__detail">Front-end Developer</span>
                   </div>
                 </div>
               </div>
               <div class="button">
-                <a href="#" class="button__live-demo"
+                <a
+                  href="https://franchescaf.github.io/web_project_around/"
+                  class="button__live-demo"
+                  id="openWindowButton"
                   >Live Demo <img src="images/flecha.png"
                 /></a>
-                <a href="#" class="button__github"
+                <a
+                  href="https://github.com/FranchescaF/web_project_around"
+                  class="button__github"
+                  id="openWindowButton"
                   >See on GitHub <img src="images/github.png"
                 /></a>
               </div>
             </div>
           </div>
-          <!-- PROYECTO 2 WEB PROJECT AROUND-->
+          <!-- PROYECTO 2-->
           <div class="projects__one">
             <div class="one__conteiner1">
-              <div class="one__title-image">Conceptual Work</div>
-              <img src="images/image 10.png" class="one__image" />
+              <div class="one__title-image">Kdrama Dataverse Chat</div>
+              <img src="images/Projects_2.png" class="one__image" />
             </div>
             <div class="one__conteiner2">
-              <h4 class="one__title">
-                Promotional landing page for our favorite show
-              </h4>
+              <h4 class="one__title">Page to chat with your favorite Kdrama</h4>
               <p class="one__subtitle">
-                Teamed up with a designer to breathe life into a promotional
-                webpage for our beloved show, Adventure Time. Delivered a fully
-                responsive design with dynamic content capabilities, seamlessly
-                integrating a newsletter feature to keep fans updated with the
-                latest adventures.
+                KDRAMA CHAT is an innovative interactive web application
+                designed for Kdrama fans. This platform integrates an immersive
+                chat experience, allowing users to interact with their favorite
+                dramas. With filters by genre, release year, and number of
+                episodes, users can explore and discover Kdramas. Additionally,
+                the application offers personalized chats, both individually and
+                in groups, using the OpenAI API to provide contextual and
+                relevant responses. Interaction with the API is securely managed
+                through an API key, ensuring a smooth and personalized user
+                experience.
               </p>
               <div class="project-info">
                 <h2 class="project-info__title">Project Info</h2>
@@ -116,16 +133,22 @@
                     <span class="info__title">Role</span>
                   </div>
                   <div class="info__item">
-                    <span class="info__detail">2023</span>
+                    <span class="info__detail">2024</span>
                     <span class="info__detail">Front-end Developer</span>
                   </div>
                 </div>
               </div>
               <div class="button">
-                <a href="#" class="button__live-demo"
+                <a
+                  href="https://dev-015-dataverse-chat-rho.vercel.app/"
+                  class="button__live-demo"
+                  id="openWindowButton"
                   >Live Demo <img src="images/flecha.png"
                 /></a>
-                <a href="#" class="button__github"
+                <a
+                  href="https://github.com/FranchescaF/DEV015-dataverse-chat"
+                  class="button__github"
+                  id="openWindowButton"
                   >See on GitHub <img src="images/github.png"
                 /></a>
               </div>
@@ -134,19 +157,19 @@
           <!-- PROYECTO 3 TEXT ANALYZER-->
           <div class="projects__one">
             <div class="one__conteiner1">
-              <div class="one__title-image">Conceptual Work</div>
-              <img src="images/image 9.png" class="one__image" />
+              <div class="one__title-image">Text Analizer</div>
+              <img src="images/projects_3.png" class="one__image" />
             </div>
             <div class="one__conteiner2">
-              <h4 class="one__title">
-                Promotional landing page for our favorite show
-              </h4>
+              <h4 class="one__title">Page that acts as a text analyzer</h4>
               <p class="one__subtitle">
-                Teamed up with a designer to breathe life into a promotional
-                webpage for our beloved show, Adventure Time. Delivered a fully
-                responsive design with dynamic content capabilities, seamlessly
-                integrating a newsletter feature to keep fans updated with the
-                latest adventures.
+                This project is about a web application designed for users to
+                analyze text directly in the browser. When the user inputs text,
+                the application will display a series of specific indicators and
+                metrics about the number of characters, letters, numbers, and
+                other elements that have been entered. The project utilized
+                technologies such as HTML, CSS, and JavaScript, and employed
+                tools like GitHub, Git, and Figma.
               </p>
               <div class="project-info">
                 <h2 class="project-info__title">Project Info</h2>
@@ -156,16 +179,22 @@
                     <span class="info__title">Role</span>
                   </div>
                   <div class="info__item">
-                    <span class="info__detail">2023</span>
+                    <span class="info__detail">2024</span>
                     <span class="info__detail">Front-end Developer</span>
                   </div>
                 </div>
               </div>
               <div class="button">
-                <a href="#" class="button__live-demo"
+                <a
+                  href="https://franchescaf.github.io/DEV015-text-analyzer/src/"
+                  class="button__live-demo"
+                  id="openWindowButton"
                   >Live Demo <img src="images/flecha.png"
                 /></a>
-                <a href="#" class="button__github"
+                <a
+                  href="https://github.com/FranchescaF/DEV015-text-analyzer"
+                  class="button__github"
+                  id="openWindowButton"
                   >See on GitHub <img src="images/github.png"
                 /></a>
               </div>
@@ -173,55 +202,80 @@
           </div>
         </div>
       </section>
-      <section class="about">
+      <section class="about" id="about">
         <h1 class="about__title">ABOUT ME</h1>
         <div class="about__content">
           <p class="about__subtitle">
-            I am a full stack developer from Perú. Has Textil Engineering
-            background.
+            I am a full stack developer from Peru with a background in Textile
+            Engineering.
           </p>
           <p class="about__paragraph">
-            Graduate in Engineering (B1 English level), currently specializing
-            as a Full Stack Developer to create and optimize interactive
-            websites that are functional and intuitive. I am persistent and
-            self-taught, with the ability to work in a team and under pressure.
-            Fascinated by programming and solutions, I decided to develop
-            prototypes using HTML, CSS, and JS through user-centered projects.
-            As a technology enthusiast, I can work independently and in a team,
-            am resourceful in problem-solving, and am self-taught.
+            I hold an Engineering degree and have a B1 level in English.
+            Currently, I am specializing in Full Stack Development with the aim
+            of creating and optimizing interactive, functional, and intuitive
+            websites. I am persistent, self-taught, and capable of working both
+            in a team and under pressure. My fascination with programming and
+            problem-solving has driven me to develop user-centered prototypes
+            using HTML, CSS, and JavaScript. As a technology enthusiast, I excel
+            in both independent and collaborative environments, demonstrating
+            resourcefulness and a strong ability to solve problems autonomously.
           </p>
-          <a href="#" class="about__link">More about me</a>
+          <!-- Texto adicional, inicialmente oculto -->
+          <p class="about__more-text hidden">
+            🌟 Highlights <br></br>🔭 I am currently working on Kdrama
+            Dataverse, a SPA that visualizes, filters, sorts, calculates
+            metrics, and offers interaction via chat by connecting to the OpenAI
+            API. <br></br>🌱 I am learning route rendering and code refactoring in
+            JavaScript. <br></br>🤝 I am looking to collaborate on front-end projects and
+            innovative web pages. <br></br>🤔 I am looking for help with expanding my
+            knowledge of advanced JavaScript and React.<br></br> 💬 Ask me about web
+            development, CSS designs, and JavaScript solutions. <br></br>💜 Fun fact: I
+            enjoy watching Asian series, I am a cat lover, and I love playing
+            video games.<br></br>
+          </p>
+          <a href="#" class="about__link" id="moreAboutMeLink">More about me</a>
         </div>
       </section>
-      <section class="contact">
+      <section class="contact" id="contact">
         <div class="contact__info">
           <h1 class="contact__info info__title">LET’S CONNECT</h1>
           <p class="contact__info info__text1">
             Say hello at
-            <a href="mailto:fatimapolgar2001@gmail.com"
+            <a id="openWindowButton" href="mailto:fatimapolgar2001@gmail.com"
               >fatimapolgar2001@gmail.com</a
             >
           </p>
           <p class="contact__info info__text2">
-            For more info, here’s my <a href="/">resume</a>
+            For more info, here’s my
+            <a
+              id="openWindowButton"
+              href="https://drive.google.com/file/d/1B3hAehghohVdmNRfCZMHPI0IP5W9ifiQ/view?usp=sharing"
+              >resume</a
+            >
           </p>
           <div class="contact__info info__icons">
             <a
-              href="www.linkedin.com/in/franchesca-zelaya"
+              href="https://www.linkedin.com/in/franchesca-zelaya/"
+              id="openWindowButton"
               class="contact__info info__icon"
               ><img src="images/linkdln.png"
             /></a>
             <a
               href="https://github.com/FranchescaF"
               class="contact__info info__icon"
+              id="openWindowButton"
               ><img src="images/github.png"
             /></a>
-            <a href="" class="contact__info info__icon"
+            <a
+              href="https://twitter.com/FatimaZelayaC"
+              class="contact__info info__icon"
+              id="openWindowButton"
               ><img src="images/twitter.png"
             /></a>
             <a
               href="https://www.instagram.com/fatimazelayac/"
               class="contact__info info__icon"
+              id="openWindowButton"
               ><img src="images/instagram.png"
             /></a>
           </div>

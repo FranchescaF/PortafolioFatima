@@ -42,7 +42,7 @@
   padding: 20px 24px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   gap: 10px;
   font-size: 16px;
   font-weight: bold;
@@ -50,6 +50,11 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+.profile__button a {
+  text-decoration: none;
+  color: black;
 }
 
 .profile__button:hover {

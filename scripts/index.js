@@ -1,79 +1,108 @@
-const navOptions = document.querySelectorAll(".nav__options");
+// Seleccionamos todos los enlaces con la clase 'open-in-new-tab'
+const links = document.querySelectorAll("#openWindowButton");
 
-navOptions.forEach((option) => {
-  option.addEventListener("click", () => {
-    // Elimina la clase 'active' de todos los enlaces
-    navOptions.forEach((nav) => nav.classList.remove("active"));
-    // Añade la clase 'active' al enlace seleccionado
-    option.classList.add("active");
+// Añadimos un event listener a cada enlace
+links.forEach((link) => {
+  link.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+    window.open(this.href, "_blank"); // Abrir el enlace en una nueva pestaña
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector(".registration-form__form");
-  const inputs = document.querySelectorAll(
-    ".registration-form__input, .registration-form__select"
-  );
-  const emailInput = document.querySelector(
-    ".registration-form__input[type='email']"
-  );
-  const dniInput = document.querySelector(
-    ".registration-form__input[placeholder='DNI']"
-  );
-  const celularInput = document.querySelector(
-    ".registration-form__input[placeholder='Celular']"
-  );
+// Validación del formulario
+document.querySelector(".form").addEventListener("submit", function (event) {
+  event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
 
-  form.addEventListener("submit", function (event) {
-    let isValid = true;
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const subject = document.getElementById("subject");
+  const message = document.getElementById("message");
 
-    // Validar que todos los campos estén llenos
-    inputs.forEach((input) => {
-      if (!input.value.trim()) {
-        isValid = false;
-        input.style.border = "2px solid red"; // Resaltar el campo vacío
-      } else {
-        input.style.border = "1px solid #ddd"; // Restaurar el borde si está lleno
+  let valid = true;
+
+  // Validación del campo Name
+  if (name.value.trim() === "") {
+    valid = false;
+    alert("Please enter your name.");
+  }
+
+  // Validación del campo Email
+  if (email.value.trim() === "" || !validateEmail(email.value)) {
+    valid = false;
+    alert("Please enter a valid email address.");
+  }
+
+  // Validación del campo Subject
+  if (subject.value.trim() === "") {
+    valid = false;
+    alert("Please enter a subject.");
+  }
+
+  // Validación del campo Message
+  if (message.value.trim() === "") {
+    valid = false;
+    alert("Please enter a message.");
+  }
+
+  // Si todo es válido, enviar el formulario
+  if (valid) {
+    sendFormDataToEmailJS(
+      name.value,
+      email.value,
+      subject.value,
+      message.value
+    );
+  }
+});
+
+// Función para validar el formato del email
+function validateEmail(email) {
+  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return regex.test(email);
+}
+
+// Inicializa EmailJS con tu public key
+emailjs.init("1iz-Lg9v8of12oSjg");
+
+// Función para enviar los datos del formulario usando EmailJS
+function sendFormDataToEmailJS(name, email, subject, message) {
+  emailjs
+    .send(
+      "service_t4pakeg", // Tu ID de servicio
+      "template_aggq1dn", // Tu ID de plantilla
+      {
+        user_name: name,
+        user_email: email,
+        subject: subject,
+        message: message,
       }
-    });
+    )
+    .then(
+      function (response) {
+        alert("Tu mensaje se ha enviado!");
+        console.log("SUCCESS!", response);
+      },
+      function (error) {
+        alert("Fallo en enviar mensaje, intentalo de nuevo.");
+        console.log("FAILED...", error);
+      }
+    );
+}
 
-    // Validar formato de correo electrónico
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!emailPattern.test(emailInput.value.trim())) {
-      isValid = false;
-      emailInput.style.border = "2px solid red"; // Resaltar si el correo es inválido
-      alert("Por favor, introduce un correo electrónico válido.");
-    }
+document
+  .getElementById("moreAboutMeLink")
+  .addEventListener("click", function (event) {
+    event.preventDefault(); // Prevenir que el enlace recargue la página
 
-    // Validar que DNI solo contenga números
-    if (!/^\d+$/.test(dniInput.value.trim())) {
-      isValid = false;
-      dniInput.style.border = "2px solid red"; // Resaltar si contiene caracteres no numéricos
-      alert("El DNI solo debe contener números.");
-    }
+    // Obtener el párrafo con el texto adicional
+    const moreText = document.querySelector(".about__more-text");
 
-    // Validar que Celular solo contenga números
-    if (!/^\d+$/.test(celularInput.value.trim())) {
-      isValid = false;
-      celularInput.style.border = "2px solid red"; // Resaltar si contiene caracteres no numéricos
-      alert("El número de celular solo debe contener números.");
-    }
-
-    if (!isValid) {
-      event.preventDefault(); // Evitar que el formulario se envíe si no es válido
-    }
-  });
-
-  // Prevenir que se escriban letras en los campos de DNI y Celular
-  dniInput.addEventListener("keypress", function (event) {
-    if (!/^\d$/.test(event.key)) {
-      event.preventDefault(); // Evita la inserción de caracteres no numéricos
+    // Verificar si el texto está oculto o visible
+    if (moreText.classList.contains("hidden")) {
+      moreText.classList.remove("hidden"); // Mostrar el texto adicional
+      this.textContent = "Less about me"; // Cambiar el texto del enlace
+    } else {
+      moreText.classList.add("hidden"); // Ocultar el texto adicional
+      this.textContent = "More about me"; // Cambiar el texto del enlace de nuevo
     }
   });
-
-  celularInput.addEventListener("keypress", function (event) {
-    if (!/^\d$/.test(event.key)) {
-      event.preventDefault(); // Evita la inserción de caracteres no numéricos
-    }
-  });
-});
