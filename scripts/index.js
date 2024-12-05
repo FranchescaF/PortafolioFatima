@@ -8,87 +8,70 @@ links.forEach((link) => {
     window.open(this.href, "_blank"); // Abrir el enlace en una nueva pestaña
   });
 });
-
+//-----------------------------------------------
 // Validación del formulario
-document.querySelector(".form").addEventListener("submit", function (event) {
-  event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+// Inicializa EmailJS con tu public key
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".form");
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const subjectInput = document.getElementById("subject");
+  const messageInput = document.getElementById("message");
 
-  const name = document.getElementById("name");
-  const email = document.getElementById("email");
-  const subject = document.getElementById("subject");
-  const message = document.getElementById("message");
+  form.addEventListener("submit", function (event) {
+    let valid = true;
 
-  let valid = true;
+    // Clear previous error messages
+    clearErrorMessages();
 
-  // Validación del campo Name
-  if (name.value.trim() === "") {
-    valid = false;
-    alert("Please enter your name.");
+    // Validate Name
+    if (nameInput.value.trim() === "") {
+      valid = false;
+      showError(nameInput, "Please enter your name.");
+    }
+
+    // Validate Email
+    if (emailInput.value.trim() === "" || !validateEmail(emailInput.value)) {
+      valid = false;
+      showError(emailInput, "Please enter a valid email address.");
+    }
+
+    // Validate Subject
+    if (subjectInput.value.trim() === "") {
+      valid = false;
+      showError(subjectInput, "Please enter a subject.");
+    }
+
+    // Validate Message
+    if (messageInput.value.trim() === "") {
+      valid = false;
+      showError(messageInput, "Please enter a message.");
+    }
+
+    if (!valid) {
+      event.preventDefault(); // Prevent form submission if not valid
+    }
+  });
+
+  function clearErrorMessages() {
+    const errorMessages = document.querySelectorAll(".error-message");
+    errorMessages.forEach((message) => {
+      message.textContent = "";
+    });
   }
 
-  // Validación del campo Email
-  if (email.value.trim() === "" || !validateEmail(email.value)) {
-    valid = false;
-    alert("Please enter a valid email address.");
+  function showError(input, message) {
+    const errorElement = input.nextElementSibling;
+    errorElement.textContent = message;
   }
 
-  // Validación del campo Subject
-  if (subject.value.trim() === "") {
-    valid = false;
-    alert("Please enter a subject.");
-  }
-
-  // Validación del campo Message
-  if (message.value.trim() === "") {
-    valid = false;
-    alert("Please enter a message.");
-  }
-
-  // Si todo es válido, enviar el formulario
-  if (valid) {
-    sendFormDataToEmailJS(
-      name.value,
-      email.value,
-      subject.value,
-      message.value
-    );
+  function validateEmail(email) {
+    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(email);
   }
 });
 
-// Función para validar el formato del email
-function validateEmail(email) {
-  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  return regex.test(email);
-}
-
-// Inicializa EmailJS con tu public key
-emailjs.init("1iz-Lg9v8of12oSjg");
-
-// Función para enviar los datos del formulario usando EmailJS
-function sendFormDataToEmailJS(name, email, subject, message) {
-  emailjs
-    .send(
-      "service_t4pakeg", // Tu ID de servicio
-      "template_aggq1dn", // Tu ID de plantilla
-      {
-        user_name: name,
-        user_email: email,
-        subject: subject,
-        message: message,
-      }
-    )
-    .then(
-      function (response) {
-        alert("Tu mensaje se ha enviado!");
-        console.log("SUCCESS!", response);
-      },
-      function (error) {
-        alert("Fallo en enviar mensaje, intentalo de nuevo.");
-        console.log("FAILED...", error);
-      }
-    );
-}
-
+//----------------------------------------------------------
 document
   .getElementById("moreAboutMeLink")
   .addEventListener("click", function (event) {

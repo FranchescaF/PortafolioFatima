@@ -20,6 +20,7 @@ body {
   height: 100%; /* Asegura que el body y el html ocupen toda la altura */
   overflow: auto; /* Permite el desplazamiento si es necesario */
   margin: 0; /* Elimina el margen por defecto */
+  box-sizing: border-box;
 }
 
 /* Estilos para desktop (pantallas grandes) */

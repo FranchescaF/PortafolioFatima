@@ -3,21 +3,21 @@
   display: flex;
   justify-content: center;
   margin-top: 100px;
-  width: 1224px;
   max-width: 100%;
-  gap: 24px;
-  margin-left: 350px;
+  padding: 20px;
 }
 
 .contact__info {
-  flex: 1;
-  max-width: 100%;
-  width: 600px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  flex-direction: column;
 }
 
 .contact__info .info__title {
   font-size: 76px;
   margin-top: 0px;
+  padding: 0px;
   margin-bottom: 20px;
   font-family: "Bebas Neue", Arial, serif;
 }
@@ -27,6 +27,7 @@
   font-size: 1.2em;
   margin-bottom: 10px;
   color: #c7c7c7;
+  padding: 0px;
 }
 
 .contact__info .info__text1 a,
@@ -48,6 +49,7 @@
   display: flex;
   width: 200px;
   margin-top: 20px;
+  flex-direction: row;
 }
 
 .contact__info .info__icon img {
@@ -92,6 +94,8 @@
   border-radius: 4px;
   font-size: 1em;
   color: #ffffff;
+  width: 700px;
+  max-width: 100%;
 }
 
 .form__input::placeholder,
@@ -120,6 +124,8 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 700px;
+  max-width: 100%;
 }
 
 .form__submit:hover {

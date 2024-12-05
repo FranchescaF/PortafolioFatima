@@ -13,7 +13,6 @@
 }
 
 .about__content {
-  width: 704px;
   max-width: 100%;
 }
 .about__title {
@@ -21,6 +20,7 @@
   margin-bottom: 20px;
   font-family: "Bebas Neue", Arial, serif;
   margin-top: 0px;
+  align-items: center;
 }
 
 .about__subtitle {
