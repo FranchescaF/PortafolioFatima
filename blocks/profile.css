@@ -91,19 +91,29 @@
 
 /* Estilos para pantallas grandes (Desktop) */
 @media (min-width: 1024px) {
+  .profile {
+    display: flex;
+    justify-content: center;
+  }
+
   .profile__content {
-    margin: 160px 80px 180px 0;
+    margin: 0px;
+    padding: 20px;
   }
 
   .profile__title {
     font-size: 101px;
+    justify-content: center;
+    align-items: center;
   }
 
   .profile__button {
     width: 187px;
     font-size: 16px;
   }
-
+  .profile__redes {
+    justify-content: center;
+  }
   .profile__icon {
     width: 64px;
     height: 64px;

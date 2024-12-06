@@ -21,6 +21,9 @@ span {
   width: 600px;
   margin-top: 80px;
   padding: 0px;
+  color: #c7c7c7;
+  font-size: 101px;
+  line-height: 0.9;
 }
 
 .projects__subtitle {
